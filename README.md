@@ -7,4 +7,5 @@ npm install
 
 
 Depedências necessárias:  
--react-router-dom
+- react-router-dom
+- reactstrap  
