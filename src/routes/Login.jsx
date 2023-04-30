@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../style/Login.css";
 import cronnosLogo from "../assets/cronnos-logo.svg";
 
@@ -35,7 +36,7 @@ const Login = () => {
                     </div>
                     <div className="cronnos-font-11 text-center">
                         <div className="mt-2 fw-semibold">
-                            <span>Esqueceu seus dados ou ainda não possui cadastro?</span> <a href="">Click aqui</a>
+                            <span>Esqueceu seus dados ou ainda não possui cadastro?</span> <Link to="/cadastro">Click aqui</Link>
                         </div>
                     </div>
                 </form>
