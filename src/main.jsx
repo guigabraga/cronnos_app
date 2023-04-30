@@ -7,6 +7,7 @@ import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} fr
 
 import Login from './routes/Login.jsx';
 import Cadastro from './routes/Cadastro.jsx';
+import RecuperarSenha from './routes/Recuperar-senha.jsx';
 
 const router = createBrowserRouter([
     {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
     {
         path: "cadastro",
         element: <Cadastro /> 
+    },
+    {
+        path: "recuperar-senha",
+        element: <RecuperarSenha /> 
     }
 ]);
 
