@@ -10,3 +10,4 @@ Depedências necessárias:
 - react-router-dom
 - reactstrap
 - bootstrap  
+- bootstrap icon  
