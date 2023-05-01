@@ -1,18 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
 #root{
     font-family: 'Roboto', sans-serif;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-}
-body{
-    margin: 0;
-    display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
 }
 
 /*Fonts Size*/
@@ -33,4 +23,28 @@ body{
 }
 .cronnos-font-15{
     font-size: 15px;
+}
+.cronnos-font-20{
+    font-size: 20px;
+}
+
+/*Background*/
+.cronnos-bg-light{
+    background-color: #F6F6F6;
+}
+
+/*Buttons*/
+.cronnos-button-sideBarLink:hover{
+    background-color: blue;
+}
+
+.sideBarHome{
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    left: -200px;
+    transition: 0.5s;
+}
+.sideBarHome:hover{
+    left: 0px;
 }

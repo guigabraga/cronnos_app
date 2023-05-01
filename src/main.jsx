@@ -8,8 +8,14 @@ import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} fr
 import Login from './routes/Login.jsx';
 import Cadastro from './routes/Cadastro.jsx';
 import RecuperarSenha from './routes/Recuperar-senha.jsx';
+import Dashboard from './routes/Dashboard.jsx';
+import Home from './routes/Home.jsx';
 
 const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Login />
+    },
     {
         path: "login",
         element: <Login />
@@ -21,6 +27,14 @@ const router = createBrowserRouter([
     {
         path: "recuperar-senha",
         element: <RecuperarSenha /> 
+    },
+    {
+        path: "dashboard",
+        element: <Dashboard /> 
+    },
+    {
+        path: "home",
+        element: <Home /> 
     }
 ]);
 
