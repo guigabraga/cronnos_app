@@ -34,8 +34,15 @@
 }
 
 /*Buttons*/
+.cronnos-button-sideBarLink{
+    transition: 0.5s;
+}
 .cronnos-button-sideBarLink:hover{
-    background-color: blue;
+    background-color: #F6F6F6;
+}
+
+.cronnos-cursor-pointer{
+    cursor: pointer;
 }
 
 .sideBarHome{

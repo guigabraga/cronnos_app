@@ -32,7 +32,7 @@ const Login = () => {
                             </div>
                         </div>
                         <div className="">
-                            <button type="submit" className="btn btn-primary btn-sm w-100">Conectar</button>
+                            <Link to="/home" className="btn btn-primary btn-sm w-100">Conectar</Link>
                         </div>
                         <div className="cronnos-font-11 text-center">
                             <div className="mt-2 fw-semibold">
