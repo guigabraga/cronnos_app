@@ -7,7 +7,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import "../style/Cadastro.css";
 import cronnosLogo from "../assets/cronnos-logo.svg";
-import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 
 import LoadSpinner from '../components/LoadSpinner';
 
@@ -26,6 +25,8 @@ function UserExists(){
 
 function Cadastro() {
 
+    localStorage.removeItem("status");
+
     const navigate = useNavigate();
     
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -39,6 +40,7 @@ function Cadastro() {
         Axios.post('http://31.220.31.209:5001/new-user', data)
         .then(function (response) {
             navigate("/");
+            localStorage.setItem("status","Usuário cirado com sucesso! Faça seu login.");
         })
         .catch(function (error) {
             // aqui temos acesso ao erro, quando alguma coisa inesperada acontece:

@@ -30,7 +30,7 @@ const RecuperarSenha = () =>{
                             </form>
                         </div>
                     </div>
-                    <div className="co-xl-6 col-lg-6 col-md-12 col-sm-12 shadow-sm rounded bg-light p-5">
+                    <div className="co-xl-6 col-lg-6 col-md-12 col-sm-12 p-5">
                         <div className="mt-5">
                             <img src={cronnosLogo} alt="" width="100%" />
                             <div className="mt-4">

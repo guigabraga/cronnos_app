@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "../style/Login.css";
 import cronnosLogo from "../assets/cronnos-logo.svg";
 
 function Login(){
+
+    const AlertLogin = localStorage.getItem("status");
 
     return(
         <div className="componentBody">
@@ -14,7 +17,10 @@ function Login(){
                 <div className="mt-3">
                     <span className="fw-semibold cronnos-font-15">Bem vindo(a) a sua plataforma de gestão logística</span>
                 </div>
-                <div className="text-start mt-4 mx-3">
+                <div className='text-center mt-3'>
+                    <span className='cronnos-font-11 fw-semibold'>{AlertLogin}</span>
+                </div>
+                <div className="text-start mt-3 mx-3">
                     <form>
                         <div className="mb-1">
                             <label className="form-label cronnos-font-12 fw-semibold">Email</label>
@@ -26,7 +32,7 @@ function Login(){
                             <input type="password" className="form-control form-control-sm border-primary" placeholder="******"/>
                         </div>
                         <div className="mb-3 hstack mx-5">
-                            <label className="form-check-label cronnos-font-12 fw-semibold" for="flexSwitchCheckDefault">Lembrar usuário</label>
+                            <label className="form-check-label cronnos-font-12 fw-semibold">Lembrar usuário</label>
                             <div className="form-check form-switch ms-auto">
                                 <input className="form-check-input cronnos-font-12" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
                             </div>
