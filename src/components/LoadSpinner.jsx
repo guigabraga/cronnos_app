@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 function LoadSpinner(){
     return(
@@ -9,7 +9,7 @@ function LoadSpinner(){
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default LoadSpinner;
+export default LoadSpinner
