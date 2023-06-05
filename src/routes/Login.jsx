@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../style/Login.css";
 import cronnosLogo from "../assets/cronnos-logo.svg";
 
-const Login = () => {
+function Login(){
 
     return(
         <div className="componentBody">
