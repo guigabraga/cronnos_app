@@ -1,50 +1,50 @@
-import React, { useState } from 'react';
-import Axios from 'axios';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from "yup";
-import "../style/Cadastro.css";
-import cronnosLogo from "../assets/cronnos-logo.svg";
+import React, { useState } from 'react'
+import Axios from 'axios'
+import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from "yup"
+import "../style/Cadastro.css"
+import cronnosLogo from "../assets/cronnos-logo.svg"
 
-import LoadSpinner from '../components/LoadSpinner';
+import LoadSpinner from '../components/LoadSpinner'
 
 const validateNewUserData = yup.object().shape({
     email: yup.string().required("Campo obrigatório!").email("Digite um e-mail válido!"),
     name: yup.string().required("Campo obrigatório!"),
     pass: yup.string().required("Campo obrigatório!").min(6, "Sua senha deve conter ao menos 6 caracteres!"),
     passConfirm: yup.string().required("Campo obrigatório!").oneOf([yup.ref('pass')], "Senhas não são iguais!")
-});
+})
 
 function UserExists(){
     return(
         <div className="cronnos-font-11 fw-semibold text-danger mt-2">Email já cadastrado!</div>
-    );
-};
+    )
+}
 
 function Cadastro() {
 
-    localStorage.removeItem("status");
+    localStorage.removeItem("status")
 
-    const navigate = useNavigate();
+    const navigate = useNavigate()
     
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(validateNewUserData)
-    });
+    })
 
-    const [removeLoadSpinner, setRemoveLoadSpinner] = useState(false);
-    const [removeUserExists, setRemoveUserExists] = useState(false);
+    const [removeLoadSpinner, setRemoveLoadSpinner] = useState(false)
+    const [removeUserExists, setRemoveUserExists] = useState(false)
 
     function newUserData(data){
         Axios.post('http://31.220.31.209:5001/new-user', data)
         .then(function (response) {
-            navigate("/");
-            localStorage.setItem("status","Usuário cirado com sucesso! Faça seu login.");
+            navigate("/")
+            localStorage.setItem("status","Usuário cirado com sucesso! Faça seu login.")
         })
         .catch(function (error) {
             // aqui temos acesso ao erro, quando alguma coisa inesperada acontece:
-            console.log(error);
+            console.log(error)
         })
     }
 
@@ -54,15 +54,15 @@ function Cadastro() {
         .then(function (response) {
             if(response.data.message > 0){
                 setTimeout(() => {
-                    setRemoveLoadSpinner(false);
-                    setRemoveUserExists(true); 
-                }, 1000);
+                    setRemoveLoadSpinner(false)
+                    setRemoveUserExists(true) 
+                }, 1000)
             }else{
-                newUserData(data);
+                newUserData(data)
             }
         })
         .catch(function (error) {
-            console.log(error);
+            console.log(error)
         })
     }
 
@@ -77,8 +77,8 @@ function Cadastro() {
                             <div className="mt-4">
                                 <span className="fw-semibold cronnos-font-12">Preencha os campos indicados para realizar seu cadastro em nossa plataforma.</span>
                             </div>
-                            <div className="mt-5">
-                                <span className="cronnos-font-10">v1.0.0-alpha</span>
+                            <div className="mt-3">
+                                <span className="cronnos-font-10 fw-semibold text-muted">v1.0.0-alpha</span>
                             </div>
                         </div>
                     </div>
@@ -144,8 +144,8 @@ function Cadastro() {
             </div>
         </div>
 
-    );
+    )
 
-};
+}
 
 export default Cadastro;
