@@ -7,6 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import "../style/Cadastro.css";
 import cronnosLogo from "../assets/cronnos-logo.svg";
+import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 
 const validateNewUserData = yup.object().shape({
     email: yup.string().required("Campo obrigatório!").email("Digite um e-mail válido!"),
@@ -58,9 +59,9 @@ function Cadastro() {
 
         <div className="componentBody">
             <div className="componentCadastro">
-                <div className="row text-center">
+                <div className="row text-center align-items-center">
                     <div className="co-xl-6 col-lg-6 col-md-12 col-sm-12 shadow-sm rounded bg-light p-5">
-                        <div className="mt-5">
+                        <div className="py-5">
                             <img src={cronnosLogo} alt="" width="100%" />
                             <div className="mt-4">
                                 <span className="fw-semibold cronnos-font-12">Preencha os campos indicados para realizar seu cadastro em nossa plataforma.</span>

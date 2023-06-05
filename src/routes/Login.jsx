@@ -11,10 +11,10 @@ const Login = () => {
                 <div>
                     <img src={cronnosLogo} alt="" width="200px" />
                 </div>
-                <div className="mt-1 px-5">
+                <div className="mt-3">
                     <span className="fw-semibold cronnos-font-15">Bem vindo(a) a sua plataforma de gestão logística</span>
                 </div>
-                <div className="text-start mt-4">
+                <div className="text-start mt-4 mx-3">
                     <form>
                         <div className="mb-1">
                             <label className="form-label cronnos-font-12 fw-semibold">Email</label>
@@ -26,7 +26,7 @@ const Login = () => {
                             <input type="password" className="form-control form-control-sm border-primary" placeholder="******"/>
                         </div>
                         <div className="mb-3 hstack mx-5">
-                            <label className="form-check-label cronnos-font-12" for="flexSwitchCheckDefault">Lembrar usuário</label>
+                            <label className="form-check-label cronnos-font-12 fw-semibold" for="flexSwitchCheckDefault">Lembrar usuário</label>
                             <div className="form-check form-switch ms-auto">
                                 <input className="form-check-input cronnos-font-12" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
                             </div>
