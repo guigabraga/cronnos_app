@@ -16,14 +16,37 @@ const validateUpdatePass = yup.object().shape({
     passConfirm: yup.string().required("Campo obrigatório!").oneOf([yup.ref('pass')], "Senhas não são iguais!")
 })
 
+function UserExists(){
+    return(
+        <div className="cronnos-font-11 fw-semibold text-danger mt-2">Email não cadastrado!</div>
+    )
+}
+
 function RecuperarSenha(){
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(validateUpdatePass)
     })
 
-    function updatePass(){
+    const [removeLoadSpinner, setRemoveLoadSpinner] = useState(false)
+    const [removeUserExists, setRemoveUserExists] = useState(false)
 
+    function updatePass(data){
+        setRemoveLoadSpinner(true)
+        Axios.post('http://31.220.31.209:5001/select-user', data)
+        .then(function (response) {
+            if(response.data.message > 0){
+
+            }else{
+                setTimeout(() => {
+                    setRemoveLoadSpinner(false)
+                    setRemoveUserExists(true) 
+                }, 1000)
+            }
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
     }
 
     return(
@@ -32,32 +55,39 @@ function RecuperarSenha(){
                 <div className="row text-center align-items-center">
                     <div className="co-xl-6 col-lg-6 col-md-12 col-sm-12">
                         <div className="text-start p-4">
-                            <form onSubmit={handleSubmit(updatePass)}>
-                                <div className="mb-1">
-                                    <div className="hstack">
-                                        <span className="form-label cronnos-font-12 fw-semibold">Email</span>
-                                        <span className="cronnos-font-10 fw-medium text-danger ms-auto">{errors.email?.message}</span>
+                            {
+                                removeLoadSpinner ? (<LoadSpinner/>):
+
+                                <form onSubmit={handleSubmit(updatePass)}>
+                                    <div className="mb-1">
+                                        <div className="hstack">
+                                            <span className="form-label cronnos-font-12 fw-semibold">Email</span>
+                                            <span className="cronnos-font-10 fw-medium text-danger ms-auto">{errors.email?.message}</span>
+                                        </div>
+                                        <input type="text" name="email" {...register("email")} className="form-control form-control-sm border-primary" placeholder="cronnos@email.com"/>
+                                        {
+                                            removeUserExists ? (<UserExists/>):
+                                            <div className="cronnos-font-11 text-muted mt-2">Informe um email para cadastro</div>
+                                        }
                                     </div>
-                                    <input type="text" name="email" {...register("email")} className="form-control form-control-sm border-primary" placeholder="cronnos@email.com"/>
-                                    <div className="cronnos-font-11 text-muted mt-2">Informe seu email cadastrado</div>
-                                </div>
-                                <div className="mb-1">
-                                    <div className="hstack">
-                                        <span className="form-label cronnos-font-12 fw-semibold">Senha</span>
-                                        <span className="cronnos-font-10 fw-medium text-danger ms-auto">{errors.pass?.message}</span>
+                                    <div className="mb-1">
+                                        <div className="hstack">
+                                            <span className="form-label cronnos-font-12 fw-semibold">Senha</span>
+                                            <span className="cronnos-font-10 fw-medium text-danger ms-auto">{errors.pass?.message}</span>
+                                        </div>
+                                        <input type="password" className="form-control form-control-sm border-primary" name="pass" {...register("pass")}/>
+                                        <div className="cronnos-font-11 text-muted mt-2">Sua senha deve conter ao menos 6 caracteres</div>
                                     </div>
-                                    <input type="password" className="form-control form-control-sm border-primary" name="pass" {...register("pass")}/>
-                                    <div className="cronnos-font-11 text-muted mt-2">Sua senha deve conter ao menos 6 caracteres</div>
-                                </div>
-                                <div className="mb-4">
-                                    <div className="hstack">
-                                        <span className="form-label cronnos-font-12 fw-semibold">Confirmar senha</span>
-                                        <span className="cronnos-font-10 fw-medium text-danger ms-auto">{errors.passConfirm?.message}</span>
+                                    <div className="mb-4">
+                                        <div className="hstack">
+                                            <span className="form-label cronnos-font-12 fw-semibold">Confirmar senha</span>
+                                            <span className="cronnos-font-10 fw-medium text-danger ms-auto">{errors.passConfirm?.message}</span>
+                                        </div>
+                                        <input type="password" className="form-control form-control-sm border-primary" name="passConfirm" {...register("passConfirm")}/>
                                     </div>
-                                    <input type="password" className="form-control form-control-sm border-primary" name="passConfirm" {...register("passConfirm")}/>
-                                </div>
-                                <button type="submit" className="btn btn-primary btn-sm w-100">Atualizar</button>
-                            </form>
+                                    <button type="submit" className="btn btn-primary btn-sm w-100">Atualizar</button>
+                                </form>
+                            }
                         </div>
                     </div>
                     <div className="co-xl-6 col-lg-6 col-md-12 col-sm-12 p-5">
