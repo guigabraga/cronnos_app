@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import "../style/Login.css";
-import cronnosLogo from "../assets/cronnos-logo.svg";
+import React, { useState } from 'react'
+import { Link } from "react-router-dom"
+import "../style/Login.css"
+import cronnosLogo from "../assets/cronnos-logo.svg"
 
 function Login(){
 
-    const AlertLogin = localStorage.getItem("status");
+    const AlertLogin = sessionStorage.getItem("status")
 
     return(
         <div className="componentBody">
@@ -49,9 +48,7 @@ function Login(){
                 </div>
             </div>
         </div>
-
-    );
-    
-};
+    )   
+}
 
 export default Login

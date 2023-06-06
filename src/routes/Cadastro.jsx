@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import Axios from 'axios'
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from "yup"
-import "../style/Cadastro.css"
-import cronnosLogo from "../assets/cronnos-logo.svg"
 
+import "../style/Cadastro.css"
+
+import cronnosLogo from "../assets/cronnos-logo.svg"
 import LoadSpinner from '../components/LoadSpinner'
 
 const validateNewUserData = yup.object().shape({
@@ -25,7 +25,7 @@ function UserExists(){
 
 function Cadastro() {
 
-    localStorage.removeItem("status")
+    sessionStorage.removeItem("status")
 
     const navigate = useNavigate()
     
@@ -40,7 +40,7 @@ function Cadastro() {
         Axios.post('http://31.220.31.209:5001/new-user', data)
         .then(function (response) {
             navigate("/")
-            localStorage.setItem("status","Usuário cirado com sucesso! Faça seu login.")
+            sessionStorage.setItem("status","Usuário criado com sucesso! Faça seu login.")
         })
         .catch(function (error) {
             // aqui temos acesso ao erro, quando alguma coisa inesperada acontece:
