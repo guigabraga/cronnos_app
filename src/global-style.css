@@ -27,10 +27,16 @@
 .cronnos-font-20{
     font-size: 20px;
 }
+.cronnos-font-30{
+    font-size: 30px;
+}
 
 /*Background*/
 .cronnos-bg-light{
     background-color: #F6F6F6;
+}
+.cronnos-bg-sidebar{
+    background-color: #00569E;
 }
 
 /*Buttons*/
@@ -47,11 +53,8 @@
 
 .sideBarHome{
     position: fixed;
-    width: 250px;
+    width: 300px;
     height: 100vh;
-    left: -200px;
     transition: 0.5s;
 }
-.sideBarHome:hover{
-    left: 0px;
-}
+

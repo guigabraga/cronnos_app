@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
 import "./global-style.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from "react-router-dom";

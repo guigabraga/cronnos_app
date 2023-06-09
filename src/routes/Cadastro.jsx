@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
-import Axios from 'axios'
-import { Link, useNavigate } from 'react-router-dom'
-import { useForm } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup'
+import React, { useState } from "react"
+import Axios from "axios"
+import { Link, useNavigate } from "react-router-dom"
+import { useForm } from "react-hook-form"
+import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 
 import "../style/Cadastro.css"
 
 import cronnosLogo from "../assets/cronnos-logo.svg"
-import LoadSpinner from '../components/LoadSpinner'
+import LoadSpinner from "../components/LoadSpinner"
 
 const validateNewUserData = yup.object().shape({
     email: yup.string().required("Campo obrigatório!").email("Digite um e-mail válido!"),

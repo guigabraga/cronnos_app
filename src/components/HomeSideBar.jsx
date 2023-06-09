@@ -1,43 +1,28 @@
-import React, { useState } from 'react';
-import { Link } from "react-router-dom";
-import CronnosLogoText from "../assets/cronnos-logo-text.svg"
-import CronnosLogoIcon from "../assets/cronnos-logo-icon.svg"
+import React, { useState } from 'react'
+import { useNavigate, Link, BrowserRouter, Routes, Route } from 'react-router-dom'
+import { AiOutlineMenuFold } from 'react-icons/ai'
 
-import { ButtonSideBarHome } from './ButtonSideBar';
-import { ButtonSideBarDashBoard } from './ButtonSideBar';
+import CronnosLogoSmall from '../assets/cronnos-logo-small.svg'
+import Dashboard from '../routes/Dashboard'
+import Tables from '../pages/Tables'
 
-const SideBar = () =>{
-
+function SideBar(){
     return(
         <div>
-            <div className='sideBarHome shadow border-end'>
-                <div className='mt-3 mx-2 hstack'>
+            <div className='sideBarHome cronnos-bg-sidebar shadow'>
+                <div className='hstack gap-3 mx-3'>
+                    <img className='rounded bg-light p-1 my-3' src={CronnosLogoSmall} width='50px'/>
                     <div>
-                        <img src={CronnosLogoText} width="150px" />
+                        <span className='d-block text-light cronnos-font-12 fw-medium'>Usuário</span>
+                        <span className='d-block text-light fw-bold cronnos-font-14'>Guilherme Braga</span>
                     </div>
                     <div className='ms-auto'>
-                        <img src={CronnosLogoIcon} width="35px" />
-                    </div>
-                </div>
-                <div className='mt-5'>
-                    <div className='fw-semibold cronnos-font-12 mx-2 px-3'>
-                        <span className='text-muted'>Menu</span>
-                    </div>
-                    <div className='mt-2'>
-                        <ButtonSideBarHome />
-                        <ButtonSideBarDashBoard />
-                        <Link className='text-decoration-none'>
-                            <div className='hstack cronnos-button-sideBarLink px-3 rounded-start ms-2'>
-                                <span className='cronnos-font-14 text-dark fw-bold'>Estoque</span><span className='ms-auto'><i class="bi bi-database-fill cronnos-font-20 text-primary"></i></span>
-                            </div>
-                        </Link>
+                        <AiOutlineMenuFold className='text-light cronnos-font-30'/>
                     </div>
                 </div>
             </div>
         </div>
-
-    );
-
-};
+    )
+}
 
 export default SideBar

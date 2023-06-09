@@ -24,6 +24,8 @@ function UserExists(){
 
 function RecuperarSenha(){
 
+    const navigate = useNavigate()
+
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(validateUpdatePass)
     })
@@ -31,12 +33,14 @@ function RecuperarSenha(){
     const [removeLoadSpinner, setRemoveLoadSpinner] = useState(false)
     const [removeUserExists, setRemoveUserExists] = useState(false)
 
-    function updatePass(data){
+    function selecDataUser(data){
         setRemoveLoadSpinner(true)
-        Axios.post('http://31.220.31.209:5001/select-user', data)
+        const emailUser = {"email": data.email}
+        Axios.post('http://31.220.31.209:5001/select-data-user', emailUser)
         .then(function (response) {
-            if(response.data.message > 0){
-
+            if(response.data.status === "success"){
+                const updatePassData = {"email": response.data.data.email, "pass": data.pass, "hashUser": response.data.data.hashUser}
+                updatePass(updatePassData)
             }else{
                 setTimeout(() => {
                     setRemoveLoadSpinner(false)
@@ -45,6 +49,18 @@ function RecuperarSenha(){
             }
         })
         .catch(function (error) {
+            console.log(error)
+        })
+    }
+
+    function updatePass(data){
+        Axios.post('http://31.220.31.209:5001/update-pass', data)
+        .then(function (response) {
+            navigate("/")
+            sessionStorage.setItem("status","Senha atualizada com sucesso! Faça o login.")
+        })
+        .catch(function (error) {
+            // aqui temos acesso ao erro, quando alguma coisa inesperada acontece:
             console.log(error)
         })
     }
@@ -58,7 +74,7 @@ function RecuperarSenha(){
                             {
                                 removeLoadSpinner ? (<LoadSpinner/>):
 
-                                <form onSubmit={handleSubmit(updatePass)}>
+                                <form onSubmit={handleSubmit(selecDataUser)}>
                                     <div className="mb-1">
                                         <div className="hstack">
                                             <span className="form-label cronnos-font-12 fw-semibold">Email</span>
