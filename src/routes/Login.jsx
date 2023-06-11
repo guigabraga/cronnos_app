@@ -17,6 +17,10 @@ const validadeLogin = yup.object().shape({
 })
 
 function Login(){
+    //Limpar campos de autenticação de usuário:
+    sessionStorage.removeItem('userAuth')
+    sessionStorage.removeItem('userToken')
+    sessionStorage.removeItem('userName')
     //Pegar mensagem do status no sessionStorage:
     const AlertLogin = sessionStorage.getItem('status')
     //Funão do useNavigate

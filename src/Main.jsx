@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         element: <RecuperarSenha /> 
     },
     {
-        path: "dashboard",
+        path: "dahsboard",
         element: <Dashboard /> 
     },
     {
