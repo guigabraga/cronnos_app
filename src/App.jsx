@@ -14,7 +14,7 @@ import Dashboard from './pages/Dashboard'
 import Pedidos from './pages/Pedidos'
 import ProdutosEstoque from './pages/ProdutosEstoque'
 //Components:
-//import SideBar from './components/HomeSideBar'
+import SideBar from './components/HomeSideBar'
 
 function App(){
     return(
@@ -25,9 +25,11 @@ function App(){
                     <Route path='/login' element={<Login/>}/>
                     <Route path='/cadastro' element={<Cadastro/>}/>
                     <Route path='/recuperar-senha' element={<RecuperarSenha/>}/>
-                    <Route path='/dashboard' element={<Dashboard/>}/>
-                    <Route path='/pedidos' element={<Pedidos/>}/>
-                    <Route path='/produtos-estoque' element={<ProdutosEstoque/>}/>
+                    <Route element={<Home/>}>
+                        <Route path='dashboard' element={<Dashboard/>}/>
+                        <Route path='pedidos' element={<Pedidos/>}/>
+                        <Route path='produtos-estoque' element={<ProdutosEstoque/>}/>
+                    </Route>
                 </Routes>
                 {/* <SideBar>
                     <Routes>

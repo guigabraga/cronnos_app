@@ -1,8 +1,10 @@
+//Imports:
 import React, { useState, useEffect } from 'react'
 import { Navbar } from 'reactstrap'
-//Icones:
+import { Outlet } from 'react-router-dom'
+//Icons:
 import { TiUser } from 'react-icons/ti'
-//Componentes:
+//Compónents:
 import HomeNavBarDropdown from './HomeNavBarDropdown'
 
 function HomeNavBar({children}){
@@ -31,7 +33,7 @@ function HomeNavBar({children}){
                     </div>
                 </div>
             </Navbar>
-            <div>{children}</div>
+            <Outlet />
         </div>
     )
 }

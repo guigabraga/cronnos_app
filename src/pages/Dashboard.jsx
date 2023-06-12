@@ -1,13 +1,10 @@
 import React from 'react'
-
-import DashboardChartOne from '../components/charts/DashboardChartOne'
+import SideBar from '../components/HomeSideBar'
+import ApexCharts from 'apexcharts'
 
 function Dashboard(){
     return(
-        <div>
-            <h1>Dashboard</h1>
-
-        </div>
+        <h1>Dashboard</h1>
     )
 }
 

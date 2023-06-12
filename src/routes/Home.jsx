@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Dashboard from '../pages/Dashboard'
+import SideBar from '../components/HomeSideBar'
+import HomeNavBar from '../components/HomeNavBar'
 
-function Home({children}){
+function Home(){
     return(
-        <div>{children}</div>
+        <div className='home-container'>
+            <SideBar />
+            <HomeNavBar/>
+        </div>
     )
 }
 
