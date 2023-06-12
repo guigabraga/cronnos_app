@@ -13,8 +13,8 @@ import Home from './routes/Home'
 import Dashboard from './pages/Dashboard'
 import Pedidos from './pages/Pedidos'
 import ProdutosEstoque from './pages/ProdutosEstoque'
-
-import SideBar from './components/HomeSideBar'
+//Components:
+//import SideBar from './components/HomeSideBar'
 
 function App(){
     return(
