@@ -72,13 +72,6 @@
     cursor: pointer;
 }
 
-.sideBarHome{
-    position: fixed;
-    width: 300px;
-    height: 100vh;
-    transition: 0.5s;
-}
-
 /*Botões da Sidebar*/
 .item-menu{
     color: #CEB3F2;
@@ -88,17 +81,43 @@
     background-color: #300B40;
     transition: all 0.5s;
 }
+.active{
+    color: whitesmoke;
+    background-color: #300B40;
+}
+.item-menu-div:hover{
+    color: whitesmoke;
+    background-color: #300B40;
+    transition: all 0.5s;
+}
+
+/*Home*/
+.home-container{
+    display: flex;
+}
 
 /*Home SideBar*/
 .home-side-bar-title{
     height: 50x;
 }
+.sideBarHome{
+    width: 300px;
+    height: 100vh;
+    transition: all 0.5s;
+}
+.sidebar-title-icon{
+    width: 50px;
+    transition: all 0.5s;
+    transition-delay: 5s;
+}
 
 /*Home Navbar*/
+.container-nav-bar{
+    height: 72px;
+}
 .home-nav-bar{
     position: fixed;
     height: 71.5px;
-    width: 100%;
 }
 .home-navbar-user-icon{
     display: flex;

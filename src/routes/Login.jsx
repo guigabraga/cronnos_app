@@ -47,7 +47,7 @@ function Login(){
                 sessionStorage.setItem('userName', response.data.nameUser)
                 setTimeout(() => {
                     setRemoveLoadSpinner(false)
-                    navigate('/Home')
+                    navigate('/home')
                 }, 1000)
             }else{
                 sessionStorage.setItem('status','Email ou senha incorretos!')

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import { Navbar } from 'reactstrap'
 //Icones:
-import { TiUser} from 'react-icons/ti'
+import { TiUser } from 'react-icons/ti'
 //Componentes:
 import HomeNavBarDropdown from './HomeNavBarDropdown'
 
-function HomeNavBar(){
+function HomeNavBar({children}){
     //Nome do usuario no sessionStorage:
     const sessionUserName =  sessionStorage.getItem('userName')
     //Data/Hora realtime:
@@ -13,10 +14,10 @@ function HomeNavBar(){
             setInterval(() => setDateState(new Date()), 10000);
     }, []);  
     return(
-        <div>
-            <div className='home-nav-bar shadow bg-light'>
-                <div className='float-end'>
-                    <div className='pt-3 hstack px-3 gap-2'>
+        <div className='w-100 container-nav-bar'>
+            <Navbar className='w-100 shadow home-nav-bar'>
+                <div className='ms-auto'>
+                    <div className='hstack px-3 gap-2'>
                         <div className='rounded home-navbar-user-icon shadow'>
                             <TiUser className='cronnos-font-30 icon-user'/>
                         </div>
@@ -29,7 +30,8 @@ function HomeNavBar(){
                         </div>
                     </div>
                 </div>
-            </div>
+            </Navbar>
+            <div>{children}</div>
         </div>
     )
 }
