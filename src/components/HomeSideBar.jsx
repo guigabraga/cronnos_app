@@ -1,13 +1,14 @@
+//Imports:
 import React, { useState } from 'react'
 import { useNavigate, Link, BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
-//Icones:
+//Icons:
 import { TiThMenu, TiThLarge, TiChevronRight, TiShoppingCart, TiThList } from 'react-icons/ti'
-
-import HomeNavBar from './HomeNavBar'
-
-import CronnosLogoSmall from '../assets/cronnos-logo-small.svg'
+//Pages:
 import Dashboard from '../pages/Dashboard'
-import Tables from '../pages/Tables'
+//Components:
+import HomeNavBar from './HomeNavBar'
+//Assets:
+import CronnosLogoSmall from '../assets/cronnos-logo-small.svg'
 
 function SideBar({children}){
     //Nome do usuario no sessionStorage:
@@ -28,7 +29,7 @@ function SideBar({children}){
             icon: <TiShoppingCart/>
         },
         {
-            path: "dahsboard",
+            path: "/produtos-estoque",
             name: "Produtos / Estoque",
             icon: <TiThList/>
         }
