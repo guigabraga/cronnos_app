@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { useNavigate, Link, BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-function Home(){
+import Dashboard from '../pages/Dashboard'
+
+function Home({children}){
     return(
-        <>
-        </>
+        <div>{children}</div>
     )
 }
 
