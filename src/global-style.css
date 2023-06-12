@@ -60,11 +60,18 @@
     background-color: #420B59;
 }
 
+/*Border*/
+.border-color-primary{
+    border-left: solid 1px;
+    border-color: #420B59;
+}
+
 /*Buttons*/
 .cronnos-button-sideBarLink{
     transition: 0.5s;
 }
 .cronnos-button-sideBarLink:hover{
+    
     background-color: #F6F6F6;
 }
 
@@ -131,5 +138,14 @@
 }
 .rotate-90{
     transform: rotate(90deg);
+}
+
+/*Pages*/
+.div-icon-page{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-color: #BDD9B0;
+    color: #420B59;
 }
 
