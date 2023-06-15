@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import PublicRoutes from './routes/PublicRoutes'
 import PrivateRoutes from './routes/PrivateRoutes'
 //Autenticação:
-import {AuthContext} from './contexts/AuthContext'
+import { AuthContext } from './contexts/AuthContext'
 //Renderização:
 function App(){
     const { auth } = useContext(AuthContext)
