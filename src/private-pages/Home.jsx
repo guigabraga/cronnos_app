@@ -1,9 +1,9 @@
+//Imports:
 import React, { useState } from 'react'
-
-import Dashboard from '../pages/Dashboard'
+//Components:
 import SideBar from '../components/HomeSideBar'
 import HomeNavBar from '../components/HomeNavBar'
-
+//Render:
 function Home(){
     return(
         <div className='home-container'>

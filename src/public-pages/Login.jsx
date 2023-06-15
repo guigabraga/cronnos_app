@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Axios from 'axios'
+import { AuthContext } from '../contexts/AuthContext'
 import { useNavigate, Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -10,6 +11,7 @@ import '../style/Login.css'
 import cronnosLogo from '../assets/cronnos-logo.svg'
 import LoadSpinner from '../components/LoadSpinner'
 
+
 //Validação yup:
 const validadeLogin = yup.object().shape({
     email: yup.string().required('Campo obrigatório!').email('Digite um e-mail válido!'),
@@ -17,13 +19,15 @@ const validadeLogin = yup.object().shape({
 })
 
 function Login(){
+    //Autenticação:
+    const { setAuth, auth} = useContext(AuthContext)
     //Limpar campos de autenticação de usuário:
     sessionStorage.removeItem('userAuth')
     sessionStorage.removeItem('userToken')
     sessionStorage.removeItem('userName')
     //Pegar mensagem do status no sessionStorage:
     const AlertLogin = sessionStorage.getItem('status')
-    //Funão do useNavigate
+    //Função do useNavigate
     const navigate = useNavigate()
     //Parametros do formulário:
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -47,6 +51,7 @@ function Login(){
                 sessionStorage.setItem('userName', response.data.nameUser)
                 setTimeout(() => {
                     setRemoveLoadSpinner(false)
+                    setAuth(true)
                     navigate('/dashboard')
                 }, 1000)
             }else{

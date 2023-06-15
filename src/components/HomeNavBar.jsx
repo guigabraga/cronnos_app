@@ -7,7 +7,7 @@ import { TiUser } from 'react-icons/ti'
 //Compónents:
 import HomeNavBarDropdown from './HomeNavBarDropdown'
 
-function HomeNavBar({children}){
+function HomeNavBar(){
     //Nome do usuario no sessionStorage:
     const sessionUserName =  sessionStorage.getItem('userName')
     //Data/Hora realtime:
