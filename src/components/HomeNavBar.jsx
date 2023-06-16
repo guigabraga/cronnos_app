@@ -33,7 +33,9 @@ function HomeNavBar(){
                     </div>
                 </div>
             </Navbar>
-            <Outlet />
+            <div className='body-render'>
+                <Outlet />
+            </div>
         </div>
     )
 }

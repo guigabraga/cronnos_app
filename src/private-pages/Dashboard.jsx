@@ -11,7 +11,7 @@ function Dashboard(){
                     <TiThLarge className='cronnos-font-20 icon-user'/>
                 </div>
                 <div>
-                    <span className='fw-bold cronnos-text-info cronnos-font-14'>Dashboard</span>
+                    <span className='fw-bold cronnos-text-info cronnos-font-20'>Dashboard</span>
                 </div>
             </div>
             <div className='ps-3'>
