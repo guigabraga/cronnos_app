@@ -95,7 +95,7 @@ function Login(){
                                     <span className='form-label cronnos-font-12 fw-semibold'>Senha</span>
                                     <span className='cronnos-font-10 fw-medium text-danger ms-auto'>{errors.pass?.message}</span>
                                 </div>
-                                <input type='password' className='form-control form-control-sm border-primary' name='pass' placeholder='******' {...register('pass')}/>
+                                <input type='password' className='form-control form-control-sm border-primary' name='pass' placeholder='******' autoComplete="on" {...register('pass')}/>
                             </div>
                             <div className='mb-3 hstack mx-5'>
                                 <label className='form-check-label cronnos-font-12 fw-semibold'>Lembrar usuário</label>

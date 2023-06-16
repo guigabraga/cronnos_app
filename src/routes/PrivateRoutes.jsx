@@ -16,9 +16,9 @@ function PrivateRoutes(){
                     <Route path='dashboard' element={<Dashboard/>}/>
                     <Route path='pedidos' element={<Pedidos/>}/>
                     <Route path='produtos-estoque' element={<ProdutosEstoque/>}/>
-                    <Route path='error' element={<ErrorPage/>}/>
-                    <Route path='*' element={<Navigate to='/error' />}/>
                 </Route>
+                <Route path='error' element={<ErrorPage/>}/>
+                <Route path='*' element={<Navigate to='/error' />}/>
             </Routes>
         </BrowserRouter>
     )
