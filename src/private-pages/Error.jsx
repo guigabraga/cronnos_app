@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import Dashboard from './Dashboard'
 
 //Componente:
 function ErrorPage(){
     return(
-        <div>
-            <h1>Error 404</h1>
+        <div className='componentBody'>
+            <div className='componentLogin'>
+                <p>Error 404</p>
+                <Link to='/dashboard'>ir para</Link>
+            </div>
         </div>
     )
 }
