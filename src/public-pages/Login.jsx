@@ -11,61 +11,79 @@ import '../style/Login.css'
 import cronnosLogo from '../assets/cronnos-logo.svg'
 import LoadSpinner from '../components/LoadSpinner'
 
-
-//Validação yup:
 const validadeLogin = yup.object().shape({
+
     email: yup.string().required('Campo obrigatório!').email('Digite um e-mail válido!'),
     pass: yup.string().required('Campo obrigatório!'),
+
 })
 
 function Login(){
-    //Autenticação:
+
     const { setAuth, auth} = useContext(AuthContext)
-    //Limpar campos de autenticação de usuário:
+
     sessionStorage.removeItem('userAuth')
     sessionStorage.removeItem('userToken')
     sessionStorage.removeItem('userName')
-    //Pegar mensagem do status no sessionStorage:
+
     const AlertLogin = sessionStorage.getItem('status')
-    //Função do useNavigate
+
     const navigate = useNavigate()
-    //Parametros do formulário:
+
     const { register, handleSubmit, formState: { errors } } = useForm({
+
         resolver: yupResolver(validadeLogin)
+
     })
-    //useState para mudança do componente de Loading:
+
     const [removeLoadSpinner, setRemoveLoadSpinner] = useState(false)
-    //Função de autenticação do usuário:
+
     function AuthUser(data){
-        //Ativação do componente de Loading:
+
         setRemoveLoadSpinner(true)
-        //Remoção da mensagem no sessionStorage:
         sessionStorage.removeItem('status')
-        //Requisição Axios
+
         Axios.post('http://31.220.31.209:5001/auth-user', data)
+
         .then(function (response) {
+
             if(response.data.status === 'success'){
+
                 sessionStorage.removeItem('status')
                 sessionStorage.setItem('userAuth', response.data.auth)
                 sessionStorage.setItem('userToken', response.data.token)
                 sessionStorage.setItem('userName', response.data.nameUser)
+
                 setTimeout(() => {
+
                     setRemoveLoadSpinner(false)
                     setAuth(true)
                     navigate('/dashboard')
+
                 }, 1000)
+
             }else{
+
                 sessionStorage.setItem('status','Email ou senha incorretos!')
+
                 setTimeout(() => {
+
                     setRemoveLoadSpinner(false)
+
                 }, 1000)
+
             }
+
         })
+
         .catch(function (error) {
+
             console.log(error)
+
         })
+        
     }
-    //Renderização principal:
+
     return(
         <div className='componentBody'>
             <div className='componentLogin'>
@@ -116,7 +134,8 @@ function Login(){
                 </div>
             </div>
         </div>
-    )   
+    )
+
 }
 
 export default Login

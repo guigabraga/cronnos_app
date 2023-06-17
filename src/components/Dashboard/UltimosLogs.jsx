@@ -8,7 +8,9 @@ function UltimosLogs(){
     const [renderTable, setRenderTable] = useState([])
     useEffect(function SelectLogs(){
         setInterval(() => {
-            Axios.get('http://31.220.31.209:5001/select-logs')
+            Axios.get('http://31.220.31.209:5001/select-logs', {
+                timeout: 10000
+            })
             .then(function (response) {
                 const dataSelectLogs = [response.data.data.data]
                 setRenderTable(dataSelectLogs[0])
@@ -16,6 +18,7 @@ function UltimosLogs(){
             })
             .catch(function (error) {
                 console.log(error)
+                setRemoveLoadSpinner(false)
             })
         }, 1000)
     }, [])
