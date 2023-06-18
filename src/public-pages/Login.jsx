@@ -122,10 +122,10 @@ function Login(){
                                 </div>
                             </div>
                             <div className=''>
-                                <button type='submit' className='btn btn-primary btn-sm w-100'>Conectar</button>
+                                <button type='submit' className='btn btn-primary btn-sm w-100 shadow'>Conectar</button>
                             </div>
                             <div className='cronnos-font-11 text-center'>
-                                <div className='mt-2 fw-semibold'>
+                                <div className='mt-3 fw-semibold'>
                                     <span>Esqueceu seus dados ou ainda não possui cadastro?</span> <Link to='/cadastro'>Click aqui</Link>
                                 </div>
                             </div>
