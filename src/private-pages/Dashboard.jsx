@@ -14,8 +14,8 @@ function Dashboard(){
                     <span className='fw-bold cronnos-text-info cronnos-font-20'>Dashboard</span>
                 </div>
             </div>
-            <div className='ps-3'>
-                <div className='border-color-primary mt-2 ps-3 py-3'>
+            <div className='ps-2'>
+                <div className='border-color-primary mt-2 py-3'>
                     <BodyPage>
                         
                     </BodyPage>
@@ -23,6 +23,7 @@ function Dashboard(){
             </div>
         </div>
     )
+    
 }
 
 export default Dashboard

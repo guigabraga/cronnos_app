@@ -130,7 +130,7 @@ function Cadastro() {
                                         </div>
                                         <input type="password" className="form-control form-control-sm border-primary" name="passConfirm" {...register("passConfirm")}/>
                                     </div>
-                                    <button type="submit" className="btn btn-primary btn-sm w-100">Cadastrar</button>
+                                    <button type="submit" className="btn btn-primary btn-sm w-100 shadow-sm">Cadastrar</button>
                                     <div className="cronnos-font-11 text-center">
                                         <div className="mt-2 fw-semibold">
                                             <span>Já possui cadastro e esqueceu seus dados?</span> <Link to="/recuperar-senha">Click aqui</Link>

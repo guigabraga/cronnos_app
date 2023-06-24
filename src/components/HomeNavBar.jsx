@@ -17,7 +17,7 @@ function HomeNavBar(){
     }, []);  
     return(
         <div className='w-100 container-nav-bar'>
-            <Navbar className='w-100 shadow home-nav-bar'>
+            <Navbar className='w-100 shadow home-nav-bar bg-light'>
                 <div className='ms-auto'>
                     <div className='hstack px-3 gap-2'>
                         <div className='rounded home-navbar-user-icon shadow'>
