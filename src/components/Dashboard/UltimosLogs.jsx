@@ -10,8 +10,6 @@ function UltimosLogs(){
 
     useEffect(() => {
 
-        setInterval(() => {
-
             Axios.get('http://31.220.31.209:5001/select-logs', {
                 timeout: 10000
             })
@@ -24,8 +22,6 @@ function UltimosLogs(){
                 console.log(error)
                 setRemoveLoadSpinner(false)
             })
-
-        }, 1000)
 
     }, [])
 
