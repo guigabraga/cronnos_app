@@ -3,12 +3,10 @@ import Axios from 'axios'
 
 import LoadSpinner from '../LoadSpinner'
 
-function TableProdutos(data){
+function TableProdutos({refrashTable}){
 
     const [removeLoadSpinner, setRemoveLoadSpinner] = useState(true)
     const [renderTable, setRenderTable] = useState([])
-
-    const dataTable = data
 
     useEffect(() => {
 
@@ -25,7 +23,7 @@ function TableProdutos(data){
             setRemoveLoadSpinner(false)
         })
 
-    }, [dataTable])
+    }, [refrashTable])
 
     return(
         <div className='m-1'>

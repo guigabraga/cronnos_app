@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
 import { TiThList } from 'react-icons/ti'
 
 import ModalNovoProduto from '../components/ProdutosEstoque/ModalNovoProduto'
 import TableProdutos from '../components/ProdutosEstoque/TableProdutos'
 
 function ProdutosEstoque(){
+
+    const [refrashTable, setRefrashTable] = useState(0)
+    
     return(
         <div className='p-4'>
             <div className='hstack gap-2'>
@@ -17,8 +20,8 @@ function ProdutosEstoque(){
             </div>
             <div className='ps-3'>
                 <div className='border-color-primary mt-2 ps-3 py-3'>
-                    <ModalNovoProduto/>
-                    <TableProdutos/>
+                    <ModalNovoProduto refrashTable={refrashTable} setRefrashTable={setRefrashTable}/>
+                    <TableProdutos refrashTable={refrashTable}/>
                 </div>
             </div>
         </div>

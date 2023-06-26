@@ -15,7 +15,7 @@ const validadeForm = yup.object().shape({
 
 })
 
-function FormNovoProduto(props){
+function FormNovoProduto({refrashTable, setRefrashTable}){
 
     const { register, handleSubmit, formState: { errors } } = useForm({
 
@@ -40,6 +40,7 @@ function FormNovoProduto(props){
         .then(function (response) {
             setSuccess(true)
             setLoadSpinner(false)
+            setRefrashTable(refrashTable + 1)
         })
         .catch(function (error) {
             console.log(error)
