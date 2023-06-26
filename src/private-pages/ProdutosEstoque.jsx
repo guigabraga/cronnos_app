@@ -2,6 +2,7 @@ import React from 'react'
 import { TiThList } from 'react-icons/ti'
 
 import ModalNovoProduto from '../components/ProdutosEstoque/ModalNovoProduto'
+import TableProdutos from '../components/ProdutosEstoque/TableProdutos'
 
 function ProdutosEstoque(){
     return(
@@ -17,6 +18,7 @@ function ProdutosEstoque(){
             <div className='ps-3'>
                 <div className='border-color-primary mt-2 ps-3 py-3'>
                     <ModalNovoProduto/>
+                    <TableProdutos/>
                 </div>
             </div>
         </div>

@@ -25,6 +25,8 @@ function FormNovoProduto(props){
 
     const [loadSpinner, setLoadSpinner] = useState(false)
 
+    const [success, setSuccess] = useState(false)
+
     function InsertProduct(data){
 
         //props.modal()
@@ -36,7 +38,8 @@ function FormNovoProduto(props){
             timeout: 10000,
         })
         .then(function (response) {
-            console.log(response)
+            setSuccess(true)
+            setLoadSpinner(false)
         })
         .catch(function (error) {
             console.log(error)
@@ -47,7 +50,10 @@ function FormNovoProduto(props){
     return(
         <div className='px-4'>
             {
-                loadSpinner ? (<LoadSpinner/>) : 
+                loadSpinner ? (<LoadSpinner/>) : success ? 
+
+                <div className='text-center fw-bold'>Produto cadastrado com sucesso!</div> :
+
                 <form onSubmit={handleSubmit(InsertProduct)}>
                     <div className='row'>
                         <div className='col-xl-6 col-lg-6 col-md-12 col-sm-12'>
