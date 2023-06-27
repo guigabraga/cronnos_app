@@ -1,13 +1,15 @@
-Clonar repositorio:  
-git clone https://github.com/guigabraga/chronos_app.git
+## Cronnos
 
-
-Acessa a pasta chronos_app e instale as dependências com o seguinte comando:  
+Projeto Integrado IESB 3° Semestre.
+#### Criadores:
+-[@GuilhermeBraga](https://github.com/guigabraga)  
+-[@LuizFelipe](https://github.com/Pluxrx)
+#### Instalação:  
+```bash
+git clone https://github.com/guigabraga/cronos_app.git
+```
+Acesse a pasta cronos_app e instale as dependências:
+```bash
 npm install
+```
 
-
-Depedências necessárias:  
-- react-router-dom
-- reactstrap
-- bootstrap  
-- bootstrap icon  
