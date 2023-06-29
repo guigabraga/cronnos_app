@@ -9,7 +9,6 @@ import PrivateRoutes from './routes/PrivateRoutes'
 import { AuthContext } from './contexts/AuthContext'
 
 function App(){
-    console.log(import.meta.env.VITE_REACT_APP_SERVER_HOST)
     const { auth } = useContext(AuthContext)
     return auth ? <PrivateRoutes /> : <PublicRoutes />
 }
