@@ -11,6 +11,9 @@ function TableProdutos({refrashTable}){
     useEffect(() => {
 
         Axios.post('http://31.220.31.209:5001/select-product', {
+            status: 1
+        },
+        {
             timeout: 10000
         })
         .then(function (response) {
