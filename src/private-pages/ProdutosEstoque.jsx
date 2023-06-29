@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState } from 'react'
 import { TiThList } from 'react-icons/ti'
 
 import ModalNovoProduto from '../components/ProdutosEstoque/ModalNovoProduto'
