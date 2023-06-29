@@ -4,6 +4,7 @@ Projeto Integrado IESB 3° Semestre.
 #### Criadores:
 -[@GuilhermeBraga](https://github.com/guigabraga)  
 -[@LuizFelipe](https://github.com/Pluxrx)
+-[@MatheusPoty](https://github.com/Hgkm)
 #### Instalação:  
 ```bash
 git clone https://github.com/guigabraga/cronos_app.git
