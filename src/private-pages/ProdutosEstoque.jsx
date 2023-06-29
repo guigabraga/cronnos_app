@@ -9,6 +9,7 @@ function ProdutosEstoque(){
     const [refrashTable, setRefrashTable] = useState(0)
     
     return(
+
         <div className='p-4'>
             <div className='hstack gap-2'>
                 <div className='rounded div-icon-page shadow'>
@@ -25,7 +26,9 @@ function ProdutosEstoque(){
                 </div>
             </div>
         </div>
+
     )
+    
 }
 
 export default ProdutosEstoque
