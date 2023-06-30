@@ -50,7 +50,6 @@ function UltimosLogs(){
                         <thead>
                             <tr>
                                 <th scope="col">Data</th>
-                                <th scope="col">Nome</th>
                                 <th scope="col">Tipo</th>
                                 <th scope="col">Descrição</th>
                             </tr>
@@ -62,7 +61,6 @@ function UltimosLogs(){
                                 return(
                                     <tr key={index}>
                                         <td>{dataFormatada}</td>
-                                        <td>{item.name}</td>
                                         <td>{item.title}</td>
                                         <td>{item.description}</td>
                                     </tr>

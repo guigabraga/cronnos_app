@@ -29,6 +29,10 @@ function LojaProdutos(){
 
     }, [])
 
+    function InsertPedido(data){
+        alert(data)
+    }
+
     return(
         <div>
             {
@@ -42,7 +46,7 @@ function LojaProdutos(){
                                     <span className='d-block cronnos-font-10 mt-2'>{item.model_product}</span>
                                     <span className='d-block cronnos-font-10'>{item.brand_product}</span>
                                     <span className='d-block cronnos-font-10 mt-2'>{item.description}</span>
-                                    <Button color="primary" size="sm" className='shadow w-100 mt-2'>Solicitar</Button>
+                                    <Button color="primary" size="sm" className='shadow w-100 mt-2' onClick={() => InsertPedido(item.description)} >Solicitar</Button>
                                 </div>
                             )
                         })
